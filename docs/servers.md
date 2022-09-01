@@ -3,6 +3,11 @@
 
 # Compute Resources
 
+## Some of administrator responsibilities
+
+* All servers must run Ubuntu release that is a) supported b) LTS (long-term). Best, if it is the latest LTS.
+* CUDA should support the latest version of PyTorch.
+
 ## Servers
 
 We currently have 5 servers with GPUs installed and 1 server with a lot of memory but no GPU.
@@ -169,11 +174,6 @@ For example, for a user Alexey Romanov, the username would be `aromanov`.
 * Add user: `sudo adduser USERNAME`
 * Add a group: `sudo addgroup GROUPNAME`
 * Set primary group: `usermod -g GROUPNAME USERNAME`
-
-## Some of administrator responsibilities
-
-* All servers must run Ubuntu release that is a) supported b) LTS (long-term). Best, if it is the latest LTS.
-* CUDA should be updated such that the latest version of PyTorch supports it.
 
 ## Other resources
 
