@@ -8,6 +8,29 @@
 * All servers must run Ubuntu release that is a) supported b) LTS (long-term). Best, if it is the latest LTS.
 * CUDA should support the latest version of PyTorch.
 
+## HuggingFace Cache management
+
+We're currently introducing a centralized cache management directory to our servers.
+It is implemented via environment variables `TRANSFORMERS_CACHE` and `HF_DATASETS_CACHE` that are set in `/etc/environment`.
+
+```bash
+TRANSFORMERS_CACHE="/home/hf_cache/transformers_cache"
+HF_DATASETS_CACHE="/home/hf_cache/datasets_cache"
+```
+
+> The location of `hf_cache` might be different on different servers. We try to put it on the largerst drive.
+
+The directory `hf_cache` should have the group `hf_cache_users` assigned. This is how we set it up:
+
+```bash
+sudo groupadd hf_cache_users  # create the group
+sudo chgrp -R hf_cache_users hf_cache  # assign the directory to the group
+sudo chmod -R 2775 hf_cache  # allow all group users to read, write and execute files in it
+for user in user names separated by space;
+    do sudo usermod -a -G hf_cache_users $user;  # add users to the group
+    done
+```
+
 ## Servers
 
 We currently have 5 servers with GPUs installed and 1 server with a lot of memory but no GPU.
