@@ -1,4 +1,4 @@
-> How to create/restore an account, who has sudo, soft- and hardware setups, ...
+> How to create an account, who has sudo, soft- and hardware setups, ...
 ---
 
 # Administration
@@ -82,3 +82,8 @@ sudo usermod -a -G hf_cache_users <username>  # add the user to the group that h
 * Add a group: `sudo addgroup GROUPNAME`
 * Set primary group: `usermod -g GROUPNAME USERNAME`
 * Expire password: `sudo passwd -e USERNAME`
+
+
+## Monitoring
+We use [Netdata](https://www.netdata.cloud) to monitor our servers. Please ask Vlad or Anton to add you to our netdata account.
+
