@@ -87,3 +87,34 @@ sudo usermod -a -G hf_cache_users <username>  # add the user to the group that h
 ## Monitoring
 We use [Netdata](https://www.netdata.cloud) to monitor our servers. Please ask Vlad or Anton to add you to our netdata account.
 
+> Remember to restart Netdata every time you change the config. This is how you do this: `sudo systemctl restart netdata`
+
+If you need to install Netdata to a new server go to our account and click on Nodes -> Add Nodes. It will give you a command to execute on the sever that will install everything and connect it to our account. The command looks roughtly like this:
+
+```bash
+wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh --claim-token OUR_TOKEN_DONT_SHARE_IT --claim-url https://app.netdata.cloud
+```
+
+Next step is to [activate GPU monitoring](https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/nvidia_smi/). To do this execute
+```
+cd /opt/netdata/etc/netdata
+sudo ./edit-config python.d.conf
+```
+
+Remove the comment `#` from the line `nvidia-smi: Yes`.
+
+Then add GPU temperature alerts. Execute `sudo ./edit-config health.d/gpu0_temperature.conf` and pase the following there
+```alarm: gpu_0_temperature
+on: nvidia_smi.gpu0_temperature
+lookup: average -5s
+units: C
+every: 10s
+crit: $this > 80
+info: High GPU temperature is potentially dangerous. Turn off the server immediately.
+```
+
+Repeat this for each GPU changing `gpu0_temperature -> gpu1_temperature` in file name, in alarm name, and **most important** in `on` parameter.
+
+Next step is to [activate Slack notifications](https://learn.netdata.cloud/docs/agent/health/notifications/slack). Go to [Slack Incoming Webhooks configuration](https://text-machine-test.slack.com/services/B046A6A11C2) and copy Webhook URL. In terminal execute `sudo ./edit-config health_alarm_notify.conf` and change `SLACK_WEBHOOK_URL` to this value. Then set `DEFAULT_RECIPIENT_SLACK="hardware"`.
+
+**Finally, restart Netdata** with command `sudo systemctl restart netdata`
