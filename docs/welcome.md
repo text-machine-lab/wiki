@@ -70,21 +70,13 @@ Most research projects are poorly structured, but you can be better than the mos
 Read this post: [Nine simple steps for better-looking python code](https://towardsdatascience.com/nine-simple-steps-for-better-looking-python-code-87e5d9d3b1cf)
 
 * First, remember that you write code to read it, not only to run it. And the worse project is written, harder it is to continue it after a few months.
-* Use python>=3.6, we are way past 2015.
 * Please, use a linter (we recommend flake8 for VS Code and default linter for PyCharm) for your code
-and (roughly) follow [PEP 8](https://www.python.org/dev/peps/pep-0008).
+and follow [PEP 8](https://www.python.org/dev/peps/pep-0008) and [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
 * 4 spaces considered a standard indentation in the community and most text editors and IDE when you press tab), please follow it.
-* Single quotes are preferred over double-quotes for strings.
 * [F-strings](https://realpython.com/python-f-strings/) are preferred over (and a lot simpler)
 [%-formatting](https://realpython.com/python-f-strings/#option-1-formatting)
 and [str.format()](https://realpython.com/python-f-strings/#option-2-strformat)
 * For docstrings, we recommend using reST or Google or Numpy [standard](https://stackoverflow.com/questions/3898572/what-is-the-standard-python-docstring-format). in the community and most text editors and IDE when you press tab), please follow it.
-* Single quotes are preferred over double-quotes for strings.
-* [F-strings](https://realpython.com/python-f-strings/) are preferred over (and a lot simpler)
-[%-formatting](https://realpython.com/python-f-strings/#option-1-formatting)
-and [str.format()](https://realpython.com/python-f-strings/#option-2-strformat)
-* For docstrings, we recommend using reST or Google or Numpy [standard](https://stackoverflow.com/questions/3898572/what-is-the-standard-python-docstring-format).
-
 
 ## GPU usage
 
