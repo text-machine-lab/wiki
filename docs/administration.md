@@ -9,6 +9,22 @@
 * CUDA should support the latest version of PyTorch.
 * When adding a new user, the administrator needs to add them to `hf_cache_users` group.
 
+## User management
+
+In general, all user accounts should have the name following the template <first letter of first name><last name>.
+For example, for a user Alexey Romanov, the username would be `aromanov`.
+
+When creating a user do the following:
+
+```bash
+USERNAME=<username>
+sudo adduser $USERNAME  # create a user
+sudo passwd -e $USERNAME  # require the user to change their password on the first login
+sudo usermod -a -G hf_cache_users $USERNAME  # add the user to the group that has access to the Huggingface cache
+```
+    
+> Remember to add users to the group `hf_cache_users`!
+
 ## HuggingFace Cache management
 
 We're currently introducing a centralized cache management directory to our servers.
@@ -58,19 +74,6 @@ sudo apt-get -y install cuda
 3. Reload the computer `sudo reboot`
 4. Follow official Nvidia tutorial to install CUDNN. To download cudnn directly to the server using wget use [this hack](https://stackoverflow.com/questions/31279494/how-to-install-cudnn-from-command-line)
 5. Check that `torch.cuda.is_available()` **and** that something like `torch.zeros(10).cuda()` works. Fix all warnings or errors if they appear.
-
-## User management
-
-In general, all user accounts should have the name following the template <first letter of first name><last name>.
-For example, for a user Alexey Romanov, the username would be `aromanov`.
-
-When creating a user do the following:
-
-```bash
-sudo adduser <username>  # create a user
-sudo passwd -e <username>  # require the user to change their password on the first login
-sudo usermod -a -G hf_cache_users <username>  # add the user to the group that has access to the Huggingface cache
-```
 
 ## Useful commands
 
