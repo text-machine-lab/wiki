@@ -17,10 +17,10 @@ For example, for a user Alexey Romanov, the username would be `aromanov`.
 When creating a user do the following:
 
 ```bash
-USERNAME=<username>
-sudo adduser $USERNAME  # create a user
-sudo passwd -e $USERNAME  # require the user to change their password on the first login
-sudo usermod -a -G hf_cache_users $USERNAME  # add the user to the group that has access to the Huggingface cache
+NAME=<username>
+sudo adduser $NAME  # create a user
+sudo passwd -e $NAME  # require the user to change their password on the first login
+sudo usermod -a -G hf_cache_users $NAME  # add the user to the group that has access to the Huggingface cache
 ```
     
 > Remember to add users to the group `hf_cache_users`!
