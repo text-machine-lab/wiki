@@ -74,7 +74,15 @@ sudo apt-get -y install cuda
 
 ### CUDA installation errors
 1. If you get `The following signatures couldn't be verified`, follow this to replace GPC keys https://developer.nvidia.com/blog/updating-the-cuda-linux-gpg-repository-key/
-    
+2. `unmet dependencies` is a very tricky error, but it probably means that you have some conflicting nvidia packages. Removing all of them before installing cuda might help
+```bash
+apt clean
+apt update
+apt purge cuda
+apt purge "nvidia-*"
+apt autoremove
+```
+
 ## Useful commands
 
 * View all users: `getent passwd`
