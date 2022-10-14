@@ -11,10 +11,10 @@
 
 ## User management
 
-In general, all user accounts should have the name following the template <first letter of first name><last name>.
+In general, all user accounts should have the name following the template `<first letter of first name><last name>`.
 For example, for a user Alexey Romanov, the username would be `aromanov`.
 
-When creating a user do the following:
+When creating a user do the following
 
 ```bash
 NAME=<username>
@@ -62,12 +62,9 @@ for user in user names separated by space;
     sudo apt autoremove
     ```
 2. Go to [Nvidia website](https://developer.nvidia.com/cuda-downloads) select Linux, x86, Ubuntu, 20.04, deb (network). It will show you commands like these, execute them.
-
 ```bash
-wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
-sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
-sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/7fa2af80.pub
-sudo add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /"
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-keyring_1.0-1_all.deb
+sudo dpkg -i cuda-keyring_1.0-1_all.deb
 sudo apt-get update
 sudo apt-get -y install cuda
 ```
@@ -75,6 +72,9 @@ sudo apt-get -y install cuda
 4. Follow official Nvidia tutorial to install CUDNN. To download cudnn directly to the server using wget use [this hack](https://stackoverflow.com/questions/31279494/how-to-install-cudnn-from-command-line)
 5. Check that `torch.cuda.is_available()` **and** that something like `torch.zeros(10).cuda()` works. Fix all warnings or errors if they appear.
 
+### CUDA installation errors
+1. If you get `The following signatures couldn't be verified`, follow this to replace GPC keys https://developer.nvidia.com/blog/updating-the-cuda-linux-gpg-repository-key/
+    
 ## Useful commands
 
 * View all users: `getent passwd`
