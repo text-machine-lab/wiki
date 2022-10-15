@@ -27,8 +27,8 @@ sudo usermod -a -G hf_cache_users $NAME  # add the user to the group that has ac
 
 ## HuggingFace Cache management
 
-We're currently introducing a centralized cache management directory to our servers.
-It is implemented via environment variables `TRANSFORMERS_CACHE` and `HF_DATASETS_CACHE` that are set in `/etc/environment`.
+Each text machine server has a common huggingface cache directory. Sharing models and datasts across users saves hundreds of gigabytes of space.
+This is implemented via environment variables `TRANSFORMERS_CACHE` and `HF_DATASETS_CACHE` that are set in `/etc/environment`.
 
 ```bash
 TRANSFORMERS_CACHE="/home/hf_cache/transformers_cache"
