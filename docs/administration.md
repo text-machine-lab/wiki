@@ -126,6 +126,12 @@ info: High GPU temperature is potentially dangerous. Turn off the server immedia
 
 Repeat this for each GPU changing `gpu0_temperature -> gpu1_temperature` in file name, in alarm name, and **most important** in `on` parameter.
 
+Now disable swap alarm, because it's annoying and not useful for us
+
+```
+sudo vim usr/lib/netdata/conf.d/health.d/swap.conf  # set "to:" to silent
+```
+
 Next step is to [activate Slack notifications](https://learn.netdata.cloud/docs/agent/health/notifications/slack). Go to [Slack Incoming Webhooks configuration](https://text-machine-test.slack.com/services/B046A6A11C2) and copy Webhook URL. In terminal execute `sudo ./edit-config health_alarm_notify.conf` and change `SLACK_WEBHOOK_URL` to this value. Then set `DEFAULT_RECIPIENT_SLACK="hardware"`.
 
 **Finally, restart Netdata** with command `sudo systemctl restart netdata`
