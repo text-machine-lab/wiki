@@ -95,7 +95,7 @@ apt autoremove
 * Expire password: `sudo passwd -e USERNAME`
 
 
-## Monitoring
+## System Monitoring
 We use [Netdata](https://www.netdata.cloud) to monitor our servers. Please ask Vlad or Anton to add you to our netdata account.
 
 > Remember to restart Netdata every time you change the config. This is how you do this: `sudo systemctl restart netdata`
@@ -126,10 +126,10 @@ info: High GPU temperature is potentially dangerous. Turn off the server immedia
 
 Repeat this for each GPU changing `gpu0_temperature -> gpu1_temperature` in file name, in alarm name, and **most important** in `on` parameter.
 
-Now disable swap alarm, because it's annoying and not useful for us
+Now delete the swap alarm, because it is annoying and is not useful for us
 
 ```
-sudo vim usr/lib/netdata/conf.d/health.d/swap.conf  # set "to:" to silent
+sudo rm /opt/netdata/etc/netdata/orig/health.d/swap.conf
 ```
 
 Next step is to [activate Slack notifications](https://learn.netdata.cloud/docs/agent/health/notifications/slack). Go to [Slack Incoming Webhooks configuration](https://text-machine-test.slack.com/services/B046A6A11C2) and copy Webhook URL. In terminal execute `sudo ./edit-config health_alarm_notify.conf` and change `SLACK_WEBHOOK_URL` to this value. Then set `DEFAULT_RECIPIENT_SLACK="hardware"`.
