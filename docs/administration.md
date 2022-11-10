@@ -25,6 +25,10 @@ sudo usermod -a -G hf_cache_users $NAME  # add the user to the group that has ac
     
 > Remember to add users to the group `hf_cache_users`!
 
+## Turn off GUI on servers
+
+GUI (xorg process) in Ubuntu 20.04 can eat up to 300Mb of GPU RAM, which is **A LOT**. To disable this process follow [this guide](https://askubuntu.com/questions/16371/how-do-i-disable-x-at-boot-time-so-that-the-system-boots-in-text-mode).
+
 ## HuggingFace Cache management
 
 Each text machine server has a common huggingface cache directory. Sharing models and datasts across users saves hundreds of gigabytes of space.
