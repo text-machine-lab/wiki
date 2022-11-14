@@ -47,7 +47,12 @@ The directory `hf_cache` should have the group `hf_cache_users` assigned. This i
 sudo groupadd hf_cache_users  # create the group
 sudo chgrp -R hf_cache_users hf_cache  # assign the directory to the group
 sudo chmod -R 2770 hf_cache  # allow all group users to read, write and execute files in it and restrict other users from acessing
-sudo setfacl -R --set u::rwx,g::rwx,o::--- hf_cache  # make all future files to be readable and writable by the group members
+
+# VERY IMPORTANT
+# set future file and directory permissions to rwx for hf_cache users and --- for others
+sudo setfacl -R -d -m group:hf_cache_users:rwx,other::--- hf_cache
+sudo setfacl -R -m group:hf_cache_users:rwx,other::--- hf_cache
+
 for user in user names separated by space;
     do sudo usermod -a -G hf_cache_users $user;  # add users to the group
     done
