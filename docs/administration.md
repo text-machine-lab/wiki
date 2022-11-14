@@ -31,6 +31,9 @@ GUI (xorg process) in Ubuntu 20.04 can eat up to 300Mb of GPU RAM, which is **A 
 
 ## HuggingFace Cache management
 
+> Cache management might be trickly. Please make sure you understand all of the commands below, especially `setfacl` and `g+s`
+> Read more about setfacl and `g+s` [in this stackoverflow](https://stackoverflow.com/questions/31886206/linux-set-user-and-group-ownership-for-future-files-and-folders)
+
 Each text machine server has a common huggingface cache directory. Sharing models and datasts across users saves hundreds of gigabytes of space.
 This is implemented via environment variables `TRANSFORMERS_CACHE` and `HF_DATASETS_CACHE` that are set in `/etc/environment`.
 
