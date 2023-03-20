@@ -78,15 +78,6 @@ To get those please access the current system administrator of the TextMachineLa
 # User management
 In order for the different servers running under the same user in the same environment we have to keep POSIX user IDs the same for a single user on each machine.
 So far here is the list of how we name them
-| USER    |UID |GID |
-|arum     |5000|4000|
-|akovalev |5001|4001|
-|vlialin  |5002|4002|
-|pkyoyete |5003|4003|
-|smuckati |5004|4004|
-|nshiva   |5005|4005|
-|span     |5006|4006|
-|hf_cahce |    |6000|
 
 Those home directories are stored at 'nastml.uml.edu/shared_home/%usermane%'
 The path of home directory on each server is '/mnt/shared_home/%username%'
