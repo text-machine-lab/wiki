@@ -28,7 +28,7 @@ sudo chmod -R 2770 /home/hf_cache  # not entirely sure why we need this, but we 
 
 ## Turn off GUI on servers
 
-GUI (xorg process) in Ubuntu 20.04 can eat up to 300Mb of GPU RAM, which is **A LOT**. To disable this process follow [this guide](https://askubuntu.com/questions/16371/how-do-i-disable-x-at-boot-time-so-that-the-system-boots-in-text-mode).
+GUI (xorg process) in Ubuntu 22.04 can eat up to 300Mb of GPU RAM, which is **A LOT**. To disable this process follow [this guide](https://askubuntu.com/questions/16371/how-do-i-disable-x-at-boot-time-so-that-the-system-boots-in-text-mode).
 
 ## HuggingFace Cache management
 
@@ -75,9 +75,9 @@ for user in user names separated by space;
     sudo apt-get purge "cuda*"
     sudo apt autoremove
     ```
-2. Go to [Nvidia website](https://developer.nvidia.com/cuda-downloads) select Linux, x86, Ubuntu, 20.04, deb (network). It will show you commands like these, execute them.
+2. Go to [Nvidia website](https://developer.nvidia.com/cuda-downloads) select Linux, x86, Ubuntu, 22.04, deb (network). It will show you commands like these, execute them.
 ```bash
-wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-keyring_1.0-1_all.deb
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.0-1_all.deb
 sudo dpkg -i cuda-keyring_1.0-1_all.deb
 sudo apt-get update
 sudo apt-get -y install cuda
