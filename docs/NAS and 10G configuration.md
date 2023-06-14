@@ -1,7 +1,7 @@
 > There are basic configuration information about local NAS, 10G backbone network and ways to launch everything properly ...
 ---
 
-# The structure
+# Network Structure
 The lab mini-network consists of the next nodes:
 * QNAP Network Area Storage, domain name is NASTML, IP address is 172.16.32.174
 * Servers (detailed information is on the servers page)
@@ -13,7 +13,7 @@ Both NAS and Servers' group are connected over 10G NIC cards to the isolated net
 Switch has all the ports configured to default vlan 1. Ports 7 and 8 are aggregated and connected to NASTML over aggregated ports 4 and 5 correspondingly. NASTML is DHCP and DNS server of 192.168.0.0/25 network with the default gateway 192.168.0.2/25 and DHCP pool starting from 192.168.0.4/25
 
 
-## Shared folders
+### Shared folders
 
 NASTML has two logical storages
 * SSDPool (RAID5 of 4 x SSD Samsung Evo 4TB SSD) total size of 10TB
@@ -24,7 +24,7 @@ There are next shared folders:
 * archive (HDD_Pool)
 * Public (HDD_Pool) - supports quest access
 
-# Access
+## Access
 We are using 2 protocols to connect to NASTML:
 * SAMBA (SMB v2, v3, v4)
 * NFS
@@ -59,26 +59,24 @@ If you are reconfiguring some server, or planning to add a different one you nee
 sudo apt install nfs-common
 ```
 
-After that we can mount our shared home directory as:
+After that, we can mount our shared home directory as:
 ```bash
 sudo mount -t nfs 192.168.0.2:/shared_home /mnt/shared_home
 ```
 
-## Windows/MacOS
-
-Windows and MacOS has built-in samba-compatible clients, and all you need to connect is the path 'nastml.uml.edu/archive' and a combination of a username and password.
-To get those please access the current system administrator of the TextMachineLab
-
 ## Access restrictions
 | Shared Folder | Guest Access | Samba Support  | NFS Support      | 172.16.32.0/23 Accessibility | 192.168.0.0/25 Accessibility |
+| ------------- | ------------ | -------------- | ---------------- | ---------------------------- | ---------------------------- |
 | shared_home   | no           | yes            | only 192.168.0.0 | yes                          | yes                          |
 | archive       | no           | yes            | no               | yes                          | yes                          |
 | public        | yes          | yes            | no               | yes                          | yes                          |
 
-# User management
-In order for the different servers running under the same user in the same environment we have to keep POSIX user IDs the same for a single user on each machine.
-So far here is the list of how we name them
+## User management: UID and GID
+In order for the different servers to run under the same user in the same environment, we have to keep POSIX user IDs the same for a single user on each machine.
+So far, here is the list of how we name them
+
 | USER    |UID |GID |
+|---------|----|----|
 |arum     |5000|4000|
 |akovalev |5001|4001|
 |vlialin  |5002|4002|
@@ -86,11 +84,40 @@ So far here is the list of how we name them
 |smuckati |5004|4004|
 |nshiva   |5005|4005|
 |span     |5006|4006|
-|hf_cahce |    |6000|
+|hf_cache |    |6000|
 
-Those home directories are stored at 'nastml.uml.edu/shared_home/%usermane%'
-The path of home directory on each server is '/mnt/shared_home/%username%'
+Those home directories are stored at `nastml.uml.edu/shared_home/%usermane%`.
+The path of home directory on each server is `/mnt/shared_home/%username%`
 
-If you create a user, please make sure it has the same UID on the all fo the machines, before setting his home directory path to the shared folder
+If you create a user, please make sure it has the same UID on all the machines, before setting his home directory path to the shared folder.
 
+### How to add a user
+To create a new user on each server, follow these simple steps:
 
+1. Connect to each server using SSH or any preferred method.
+1. Chose username, uid, and gid (read the above short section about UID and GID)
+   ```bash
+   export NEWUSER=<newuser>
+   export NEWGID=<newusergid>
+   export NEWUID=<newuseruid>
+   ```
+1. Now it's safe to execute the commands that will create a user group, create a user with pre-defined UID and GID and assign them a home directory in `shared_home`
+   ```bash
+   sudo groupadd -g $NEWGID $NEWUSER
+   sudo useradd -g $NEWGID -u $NEWUID -d /mnt/shared_home/$NEWUSER $NEWUSER
+   ```
+1. Set a password for the user by running the following command and providing the desired password when prompted:
+   ```bash
+   sudo passwd $NEWUSER
+   ```
+1. Expire the user's password by running the following command:
+   ```bash
+   sudo passwd -e $NEWUSER
+   ```
+1. **IMPORTANT!** Add the new user ID to the table in this document
+
+That's it! The new user has been created on each server with the same UID and GID, their home directory is set to the shared folder, and the password is set to be expired. Repeat these steps for each server to ensure consistency across the network.
+
+Remember, if you need to create additional users, simply increment the UID and GID values and execute the same commands with the new username.
+
+If you encounter any issues or have further questions, just copy-paste this document to ChatGPT and then ask your question.
