@@ -16,11 +16,11 @@ GPU-enabled:
 
 | IP           | Domain            | GPUs                     | CUDA version |
 |--------------|-------------------|--------------------------|--------------|
-| 172.16.33.17 | inanna.cs.uml.edu | 2x RTX 3090              | 11.4         |
-| 172.16.33.13 | enki.cs.uml.edu   | 2x Titan X               | 11.2         |
-| 172.16.33.15 | shala.cs.uml.edu  | 1x RTX 3090, 1x GTX 1080 | 11.0         |
-| 172.16.33.14 | ishkur.cs.uml.edu | 2x RTX 3090              | 11.0         |
-| 172.16.33.9  | marduk.cs.uml.edu | 2x GTX 1080, 1x Titan X  | 11.0         |
+| 172.16.33.17 | inanna.cs.uml.edu | 2x RTX 3090              | 11.8         |
+| 172.16.33.13 | enki.cs.uml.edu   | 1x RTX 3090              | 12.1         |
+| 172.16.33.15 | shala.cs.uml.edu  | 2x RTX 3090              | 12.0         |
+| 172.16.33.14 | ishkur.cs.uml.edu | DOWN                     | N/A          |
+| 172.16.33.9  | marduk.cs.uml.edu | 2x Titan X               | 11.0         |
 
 CPU-only:
 
