@@ -4,6 +4,7 @@
 # Network Structure
 The lab mini-network consists of the next nodes:
 * QNAP Network Area Storage, domain name is NASTML, IP address is 172.16.32.174
+* Inner IP address is 192.168.0.2
 * Servers (detailed information is on the servers page)
 * TL-SX3008F JetStream 8-Port SFP+ 10GE Managed Switch
 
@@ -119,5 +120,21 @@ To create a new user on each server, follow these simple steps:
 That's it! The new user has been created on each server with the same UID and GID, their home directory is set to the shared folder, and the password is set to be expired. Repeat these steps for each server to ensure consistency across the network.
 
 Remember, if you need to create additional users, simply increment the UID and GID values and execute the same commands with the new username.
-
 If you encounter any issues or have further questions, just copy-paste this document to ChatGPT and then ask your question.
+
+### Long Delay On Login Attempt 
+In some cases while login to server you might experience an indefinite wait time. 
+That might be caused by a server being unable to resolve user's home directory (192.168.0.2 is unreachable). In that case, to check if the network configuration is working properly, connect to server over localadmin profile.
+Run the next commands on direct connection from the lab:
+sudo dhclient -r
+sudo dhclient
+OR if you are using SSH connection
+sudo dhclient -r; sudo dhclient
+
+Then check if server is receiving it's own IP address on 10G interface usinf command
+ifconfig
+### Backup information
+We are using simple crontab schedule to rsycn contents of 'shared_home' to 'archive/homebackup'
+Command to run the copy is
+sudo rsync -av -r --exclude="hf_cache" /share/shared_home/ /share/archive/homebackup/
+
