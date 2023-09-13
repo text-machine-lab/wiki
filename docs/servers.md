@@ -43,7 +43,7 @@ If you don’t currently have an account, you can use the teaching lab’s works
 TRANSFORMERS_CACHE="/home/public/$(whoami)/transformers_cache"
 HF_DATASETS_CACHE="/home/public/$(whoami)/datasets_cache"
 ```
-* Please notice that `/home/public` storage is very limited. It is less than 4 TB for all ML1 users. Do not save unnecessary checkpoints, clean up your experiment directories regularly, and occasionally delete all contents of your Huggingface cache directories. Also, do not store terabyte-sized datasets there without consulting with Vlad or Anna. 
+* Please notice that `/home/public` storage is very limited. It is less than 4 TB for all ML1 users. Do not save unnecessary checkpoints, clean up your experiment directories regularly, and occasionally delete all contents of your Huggingface cache directories. Also, do not store terabyte-sized datasets there without consulting with Vlad or Anna.
 
 
 ### Detailed Shala spec
