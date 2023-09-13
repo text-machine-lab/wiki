@@ -21,6 +21,7 @@ GPU-enabled:
 | 172.16.33.15 | shala.cs.uml.edu  | 2x RTX 3090              | 12.0         |
 | 172.16.33.14 | ishkur.cs.uml.edu | DOWN                     | N/A          |
 | 172.16.33.9  | marduk.cs.uml.edu | 2x Titan X               | 11.0         |
+| <ask Vlad>   | ml1 <ask Vlad>    | 8x A6000 Ada             | 12.2         |
 
 CPU-only:
 
@@ -28,6 +29,22 @@ CPU-only:
 
 If you have problems connecting to a server or wish to create an account, please contact the corresponding administrator.
 If you don’t currently have an account, you can use the teaching lab’s workstations in DAN417 (each one of them has a GPU).
+
+### Some special things about ML1 server (the 7x A6000 Ada)
+
+* **Do not** use your cs account home directory to store data or models
+* Use local storage: `/home/public`
+* Create your user directory `mkdir /home/public/$(whoami)`
+* Use local conda. To activate it, you can add this to your bashrc `source /home/public/source_conda.sh`
+   * Double-check that it works and your `which conda` shows you `/home/public/miniconda3/bin/conda`
+   * If it doesn't work, ask Vlad how to fix it
+* (Optionally) change your Huggingface cache directory by adding this to your `.bashrc`:
+```
+TRANSFORMERS_CACHE="/home/public/$(whoami)/transformers_cache"
+HF_DATASETS_CACHE="/home/public/$(whoami)/datasets_cache"
+```
+* Please notice that `/home/public` storage is very limited. It is less than 4 TB for all ML1 users. Do not save unnecessary checkpoints, clean up your experiment directories regularly, and occasionally delete all contents of your Huggingface cache directories. Also, do not store terabyte-sized datasets there without consulting with Vlad or Anna. 
+
 
 ### Detailed Shala spec
 
