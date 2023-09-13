@@ -33,7 +33,7 @@ If you don’t currently have an account, you can use the teaching lab’s works
 ### Some special things about ML1 server (the 7x A6000 Ada)
 
 * **Do not** use your cs account home directory to store data or models
-* Use local storage: `/home/public`
+* Use local server storage instead, it is located in `/home/public`
 * Create your user directory `mkdir /home/public/$(whoami)`
 * Use local conda. To activate it, you can add this to your bashrc `source /home/public/source_conda.sh`
    * Double-check that it works and your `which conda` shows you `/home/public/miniconda3/bin/conda`
