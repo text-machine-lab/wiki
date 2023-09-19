@@ -49,7 +49,7 @@ HF_DATASETS_CACHE="/home/public/$(whoami)/datasets_cache"
 * These GPUs are super cool, but 7 of them is not a lot, so
   * Make sure your runs use 100% of the GPU and as much memory as possible
   * This is important, because while you are using this GPU, other people can't (never run more than one job on the same GPU)
-* I expect several people may want to use ML1, please make sure you are correctly specifying GPUs in your export CUDA_VISIBLE_DEVICES when starting a run (e.g, if the GPUs 0 and 1 are occupied and you need two GPUs do export CUDA_VISIBLE_DEVICES=2,3
+* I expect several people may want to use ML1, please make sure you are correctly specifying GPUs in your  CUDA_VISIBLE_DEVICES when starting a run (e.g, if the GPUs 0 and 1 are occupied and you need two GPUs do `export CUDA_VISIBLE_DEVICES=2,3`
 
 
 ### Detailed Shala spec
