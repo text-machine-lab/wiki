@@ -21,7 +21,7 @@ GPU-enabled:
 | 172.16.33.15 | shala.cs.uml.edu  | 2x RTX 3090              | 12.0         |
 | 172.16.33.14 | ishkur.cs.uml.edu | DOWN                     | N/A          |
 | 172.16.33.9  | marduk.cs.uml.edu | 2x Titan X               | 11.0         |
-| <ask Vlad>   | ml1 <ask Vlad>    | 8x A6000 Ada             | 12.2         |
+| <ask Vlad>   | ml1 <ask Vlad>    | 7x A6000 Ada             | 12.2         |
 
 CPU-only:
 
