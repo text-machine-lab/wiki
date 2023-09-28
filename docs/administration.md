@@ -47,7 +47,9 @@ You can do this by adding a sudo cron job that executes it every minute.
 
 ### Ubuntu >= 20.04
 
-**EXTREMELY IMPORTANT: Use tmux** or screen to run the installation or you can corrupt the whole server if you accidentally close the terminal or lose connection.
+**EXTREMELY IMPORTANT:** 
+- Use tmux or screen to run the installation or you can corrupt the whole server if you accidentally close the terminal or lose connection.
+- Do not use NVIDIA installation guide until the below doesn't work.
 
 1. Remove stuff installed via apt-get
     ```bash
@@ -56,7 +58,7 @@ You can do this by adding a sudo cron job that executes it every minute.
     sudo apt-get purge "cuda*"
     sudo apt autoremove
     ```
-2. Go to [Nvidia website](https://developer.nvidia.com/cuda-downloads) select Linux, x86, Ubuntu, 22.04, deb (network). It will show you commands like these, execute them.
+2. Go to [Nvidia website](https://developer.nvidia.com/cuda-downloads) select Linux, x86, Ubuntu, 20.04, deb (network). It will show you commands like these, execute them.
 ```bash
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.0-1_all.deb
 sudo dpkg -i cuda-keyring_1.0-1_all.deb
