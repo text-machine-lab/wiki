@@ -48,8 +48,8 @@ You can do this by adding a sudo cron job that executes it every minute.
 ### Ubuntu >= 20.04
 
 **EXTREMELY IMPORTANT:** 
-- Use tmux or screen to run the installation or you can corrupt the whole server if you accidentally close the terminal or lose connection.
-- Do not use NVIDIA installation guide until the below doesn't work.
+- <u> Use tmux or screen to run the installation or you can corrupt the whole server if you accidentally close the terminal or lose connection </u>.
+- <u> Do not use NVIDIA installation guide until the below doesn't work </u>.
 
 1. Remove stuff installed via apt-get
     ```bash
