@@ -19,8 +19,11 @@ GPU-enabled:
 | 172.16.33.17 | inanna.cs.uml.edu | 2x RTX 3090              | 11.8         |
 | 172.16.33.13 | enki.cs.uml.edu   | 2x Titan X               | 11.4         |
 | 172.16.33.15 | shala.cs.uml.edu  | 2x RTX 3090              | 11.0         |
-| 172.16.33.14 | ishkur.cs.uml.edu | 1x RTX 3090              | 11.0         | Offline
+| 172.16.33.14 | ishkur.cs.uml.edu | 1x RTX 3090              | DEAD         |
 | 172.16.33.9  | marduk.cs.uml.edu | 2x GTX 1080, 1x Titan X  | 12.0         |
+| <ask Vlad>   | cs-gpu1.cs.uml.edu| 8x A6000 Ada             | 12.2         |
+  
+Ishkur needs a new motherboard.
 
 CPU-only:
 
@@ -28,6 +31,28 @@ CPU-only:
 
 If you have problems connecting to a server or wish to create an account, please contact the corresponding administrator.
 If you don’t currently have an account, you can use the teaching lab’s workstations in DAN417 (each one of them has a GPU).
+
+### Some special things about ML1 server (the 7x A6000 Ada)
+
+* **Do not** use your cs account home directory to store data or models
+* Use local server storage instead, it is located in `/home/public`
+* Create your user directory `mkdir /home/public/$(whoami)`
+* Use local conda. To activate it, you can add this to your bashrc `source /home/public/source_conda.sh`
+   * Double-check that it works and your `which conda` shows you `/home/public/miniconda3/bin/conda`
+   * If it doesn't work, ask Vlad how to fix it
+* Do `export NCCL_P2P_DISABLE=1` before starting a distributed run. This is a known bug in [A6000](https://discuss.pytorch.org/t/single-machine-ddp-issue-on-a6000-gpu/134869/15)
+* (Optionally) change your Huggingface cache directory by adding this to your `.bashrc`:
+```
+TRANSFORMERS_CACHE="/home/public/$(whoami)/transformers_cache"
+HF_DATASETS_CACHE="/home/public/$(whoami)/datasets_cache"
+```
+* Please notice that `/home/public` storage is very limited. It is less than 4 TB for all ML1 users. Do not save unnecessary checkpoints, clean up your experiment directories regularly, and occasionally delete all contents of your Huggingface cache directories. Also, do not store terabyte-sized datasets there without consulting with Vlad or Anna.
+* Currently, the server only has 7GPUs, which significantly limits your batch sizes. If using distributed, I recommend no more than 4 GPUs
+* These GPUs are super cool, but 7 of them is not a lot, so
+  * Make sure your runs use 100% of the GPU and as much memory as possible
+  * This is important, because while you are using this GPU, other people can't (never run more than one job on the same GPU)
+* I expect several people may want to use ML1, please make sure you are correctly specifying GPUs in your  CUDA_VISIBLE_DEVICES when starting a run (e.g, if the GPUs 0 and 1 are occupied and you need two GPUs do `export CUDA_VISIBLE_DEVICES=2,3`
+
 
 ### Detailed Shala spec
 

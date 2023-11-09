@@ -5,9 +5,15 @@ Decided to graduate? Welcome to hell.
 Congratulations on making it this far. However, you are not quite there yet - there is still an overwhelming amount of paperwork you will have to go through.
 To save yourself some time, please follow this step-by-step guideline on how to get graduation clearance.
 
+## Official checklist:
+
+Follow [this checklist](https://www.uml.edu/sciences/computer-science/programs/masters/doctorate/checklist.aspx) for a general step-by-step graduation guide. And you can find [this one](https://www.cs.uml.edu/~gcoord/student-documents.html#PhDPathway) to be useful too.
+
+The whole procedure might be very confusing, feel free to reach out to Xinwen Fu for clarifications. He's our new (as of 2023) graduate coordinator and I recommend reaching him out even if you have Cindy Chen listed in your UML NOW. He's very quick to respond and I (Vlad) had very positive experience with him.
+
 ## 0. Prerequisites
 
-- It is assumed that you've already got a full-time job offer. If you haven't yet, prep for the interviews and come back here once you do get an offer.
+- (optional, but highly recommended) It is assumed that you've already got a full-time job offer. If you haven't yet, prep for the interviews and come back here once you do get an offer.
 
 - It is also assumed you have already satisfied the [PhD requirements](http://www.cs.uml.edu/~gcoord/PhD_Degree_Requirements.pdf).
 
@@ -16,6 +22,10 @@ To save yourself some time, please follow this step-by-step guideline on how to 
 - Submit the [PhD qualification clearance form](http://www.cs.uml.edu/~gcoord/forms/CS_PhD_Qual_Clearance_Form.docx) as early as possible, if you haven't already done so.
 
 - Keep an eye on the deadline for submitting the [Declaration of the Intent to graduate](https://www.uml.edu/docs/clearance_form_tcm18-3565.pdf). Submit is as early as possible. You **do not** need our dean's signature on the form.
+
+- Also keep an eye on the deadlines for 1) submitting your thesis proposal to the library (it has to be after you defend your proposal) 2) defending your thesis 3) submitting your final thesis to the library. All of these deadlines are listed on the university graduate calendar.
+
+> If you fail these deadlines, it's **not a huge deal**. You can still apply for **Post-**OPT, graduate, and start a job on time. The only thing that changes is that your official graduation will be the next semester. But if you do fail these deadlines, please contact anyone from Debby White team (maybe even her directly) for a consultation. She's super nice and helpful.
 
 ## 1. OPT application (2 weeks)
 Depending on your job start date, your first step is to clarify the date of the end of the program. 

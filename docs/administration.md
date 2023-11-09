@@ -20,53 +20,36 @@ When creating a user do the following
 NAME=<username>
 sudo adduser $NAME  # create a user
 sudo passwd -e $NAME  # require the user to change their password on the first login
-sudo usermod -a -G hf_cache_users $NAME  # add the user to the group that has access to the Huggingface cache
-sudo chmod -R 2770 /home/hf_cache  # not entirely sure why we need this, but we do
 ```
     
-> Remember to add users to the group `hf_cache_users`!
+> Note that we have deprecated the group `hf_cache_users`
 
 ## Turn off GUI on servers
 
-GUI (xorg process) in Ubuntu 20.04 can eat up to 300Mb of GPU RAM, which is **A LOT**. To disable this process follow [this guide](https://askubuntu.com/questions/16371/how-do-i-disable-x-at-boot-time-so-that-the-system-boots-in-text-mode).
+GUI (xorg process) in Ubuntu 22.04 can eat up to 300Mb of GPU RAM, which is **A LOT**. To disable this process follow [this guide](https://askubuntu.com/questions/16371/how-do-i-disable-x-at-boot-time-so-that-the-system-boots-in-text-mode).
 
 ## HuggingFace Cache management
-
-> Cache management might be trickly. Please make sure you understand all of the commands below, especially `setfacl` and `g+s`
-> Read more about setfacl and `g+s` [in this stackoverflow](https://stackoverflow.com/questions/31886206/linux-set-user-and-group-ownership-for-future-files-and-folders)
-
 Each text machine server has a common huggingface cache directory. Sharing models and datasts across users saves hundreds of gigabytes of space.
 This is implemented via environment variables `TRANSFORMERS_CACHE` and `HF_DATASETS_CACHE` that are set in `/etc/environment`.
 
 ```bash
-TRANSFORMERS_CACHE="/home/hf_cache/transformers_cache"
-HF_DATASETS_CACHE="/home/hf_cache/datasets_cache"
+TRANSFORMERS_CACHE="/mnt/shared_home/hf_cache/transformers_cache"
+HF_DATASETS_CACHE="/mnt/shared_home/datasets_cache"
 ```
 
-> The location of `hf_cache` might be different on different servers. We try to put it on the largerst drive.
+Cache management might be trickly. For some reason, using Ubuntu's ACLs does not work, so instead, we run a script that makes everything 777 in the directory every time someone reads files in it.
 
-The directory `hf_cache` should have the group `hf_cache_users` assigned. This is how we set it up:
+The script `set_all_777.sh` should be running **continuously** to make sure all files are 777.
 
-```bash
-sudo groupadd hf_cache_users  # create the group
-sudo chgrp -R hf_cache_users hf_cache  # assign the directory to the group
-sudo chmod -R 2770 hf_cache  # allow all group users to read, write and execute files in it and restrict other users from acessing
-
-# VERY IMPORTANT
-# set future file and directory permissions to rwx for hf_cache users and --- for others
-sudo setfacl -R -d -m group:hf_cache_users:rwx,other::--- hf_cache
-sudo setfacl -R -m group:hf_cache_users:rwx,other::--- hf_cache
-
-for user in user names separated by space;
-    do sudo usermod -a -G hf_cache_users $user;  # add users to the group
-    done
-```
+You can do this by adding a sudo cron job that executes it every minute.
 
 ## Installing drivers and CUDA
 
 ### Ubuntu >= 20.04
 
-**EXTREMELY IMPORTANT: Use tmux** or screen to run the installation or you can corrupt the whole server if you accidentally close the terminal or lose connection.
+**EXTREMELY IMPORTANT:** 
+- <u> Use tmux or screen to run the installation or you can corrupt the whole server if you accidentally close the terminal or lose connection </u>.
+- <u> Do not use NVIDIA installation guide until the below doesn't work </u>.
 
 1. Remove stuff installed via apt-get
     ```bash
@@ -77,7 +60,7 @@ for user in user names separated by space;
     ```
 2. Go to [Nvidia website](https://developer.nvidia.com/cuda-downloads) select Linux, x86, Ubuntu, 20.04, deb (network). It will show you commands like these, execute them.
 ```bash
-wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-keyring_1.0-1_all.deb
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.0-1_all.deb
 sudo dpkg -i cuda-keyring_1.0-1_all.deb
 sudo apt-get update
 sudo apt-get -y install cuda
@@ -88,10 +71,20 @@ sudo apt-get -y install cuda
 
 ### CUDA installation errors
 1. If you get `The following signatures couldn't be verified`, follow this to replace GPC keys https://developer.nvidia.com/blog/updating-the-cuda-linux-gpg-repository-key/
-2. `unmet dependencies` is a very tricky error, but it probably means that you have some conflicting nvidia packages. Removing all of them before installing cuda might help
+2. `unmet dependencies` is a very tricky error, but it probably means that you have some conflicting nvidia packages.
+Try this:
+```bash
+sudo apt --fix-broken install
+```
+
+Also, try remoging all conflicting packages of them before installing cuda.
+
+Try different combinations of the commands below
+
 ```bash
 apt clean
 apt update
+apt upgrade
 apt purge cuda
 apt purge "nvidia-*"
 apt autoremove
