@@ -34,7 +34,7 @@ This is implemented via environment variables `TRANSFORMERS_CACHE` and `HF_DATAS
 
 ```bash
 TRANSFORMERS_CACHE="/mnt/shared_home/hf_cache/transformers_cache"
-HF_DATASETS_CACHE="/mnt/shared_home/datasets_cache"
+HF_DATASETS_CACHE="/mnt/shared_home/hf_cache/datasets_cache"
 ```
 
 Cache management might be trickly. For some reason, using Ubuntu's ACLs does not work, so instead, we run a script that makes everything 777 in the directory every time someone reads files in it.
