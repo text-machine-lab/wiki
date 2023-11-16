@@ -9,7 +9,9 @@ To save yourself some time, please follow this step-by-step guideline on how to 
 
 Follow [this checklist](https://www.uml.edu/sciences/computer-science/programs/masters/doctorate/checklist.aspx) for a general step-by-step graduation guide. And you can find [this one](https://www.cs.uml.edu/~gcoord/student-documents.html#PhDPathway) to be useful too.
 
-The whole procedure might be very confusing, feel free to reach out to Xinwen Fu for clarifications. He's our new (as of 2023) graduate coordinator and I recommend reaching him out even if you have Cindy Chen listed in your UML NOW. He's very quick to respond and I (Vlad) had very positive experience with him.
+[Thesis guide](https://www.uml.edu/catalog/graduate/policies/dissertation-thesis/) is also very useful.
+
+Unfortunately, there is no single resource that will give you all of the information. That's why we made this wiki page. The whole procedure might be very confusing, feel free to reach out to Xinwen Fu for clarifications. He's our new (as of 2023) graduate coordinator and I recommend reaching him out even if you have Cindy Chen listed in your UML NOW. He's very quick to respond and I (Vlad) had very positive experience with him.
 
 ## 0. Prerequisites
 
@@ -91,10 +93,15 @@ Once your proposal is ready, you need to get it approved (yes, it does sound rid
 
 ❗Advertise your proposal **at least 2 weeks prior to the defense date** by sending an email to cs-msgs@listserv.uml.edu and by filling out the [Today@UML form](https://www.uml.edu/service/Apps/WebsiteContentManagement/TodaySubmission/Submit).
 
-## 5. Dissertation
+❗Make sure to schedule the defence date during the proposal
 
+❗Make sure to sign the title page (PI + committee, no dean signature required for proposal). PDF annotation signature should be fine.
 
-## 6. Defense
+## 5. After the Proposal
+
+Submit your thesis draft to the library. It will cost $30+ to ProQuest and extra $50 to the library (archival fee). You don't have to register the copyright through ProQuest (extra $90).
+
+## 6. Dissertation Defence
 
 ## 7. After defense
 
