@@ -101,6 +101,8 @@ Once your proposal is ready, you need to get it approved (yes, it does sound rid
 
 Submit your thesis draft to the library. It will cost $30+ to ProQuest and extra $50 to the library (archival fee). You don't have to register the copyright through ProQuest (extra $90).
 
+You don't have to use your university email with ProQuest and I actually had some issues with it for some reason. It's better to use your personal email, because this way you'll be able to access this after graduation. You probably don't need it, but I guess it's better to have it just in case.
+
 ## 6. Dissertation Defence
 
 ## 7. After defense
