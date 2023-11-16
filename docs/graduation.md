@@ -13,6 +13,10 @@ Follow [this checklist](https://www.uml.edu/sciences/computer-science/programs/m
 
 Unfortunately, there is no single resource that will give you all of the information. That's why we made this wiki page. The whole procedure might be very confusing, feel free to reach out to Xinwen Fu for clarifications. He's our new (as of 2023) graduate coordinator and I recommend reaching him out even if you have Cindy Chen listed in your UML NOW. He's very quick to respond and I (Vlad) had very positive experience with him.
 
+## A note on the deadlines
+
+There are certain deadlines related to the graduation and they are strict. E.g., you can't graduate in Fall semester if you failed a library submission deadline. However, it's not a huge problem. You can formally graduate in the next semester, but start your OPT job right after your thesis defence (assuming your OPT is approved by then).
+
 ## 0. Prerequisites
 
 - (optional, but highly recommended) It is assumed that you've already got a full-time job offer. If you haven't yet, prep for the interviews and come back here once you do get an offer.
@@ -99,9 +103,11 @@ Once your proposal is ready, you need to get it approved (yes, it does sound rid
 
 ## 5. After the Proposal
 
-Submit your thesis draft to the library. It will cost $30+ to ProQuest and extra $50 to the library (archival fee). You don't have to register the copyright through ProQuest (extra $90).
+Submit your thesis draft to the library. **You have to do it a week before the library submission deadline.** It will cost $30+ to ProQuest and extra $50 to the library (archival fee). You don't have to register the copyright through ProQuest (extra $90).
 
 You don't have to use your university email with ProQuest and I actually had some issues with it for some reason. It's better to use your personal email, because this way you'll be able to access this after graduation. You probably don't need it, but I guess it's better to have it just in case.
+
+If you have any issues, subit 
 
 ## 6. Dissertation Defence
 
