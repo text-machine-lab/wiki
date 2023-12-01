@@ -82,6 +82,8 @@ Ask your potential committee members if they can and want to join your committee
 
 Follow [the school guidelines](https://www.uml.edu/catalog/graduate/policies/dissertation-thesis/) for proposal/thesis formatting. As of 2021, there is no official LaTeX template for a UML thesis. Thanks to kind students, you can get started with the [unoffical ones](https://github.com/marksherman/umlthesis).
 
+Title, signature pages, and abstract title of the template are not up to the [university format](https://libguides.uml.edu/ld.php?content_id=74130356). I had to make a word doc, export it to PDF and concatenate my disseration with the correctly formatted signature page.
+
 ❗Schedule your proposal defense such that you allow your committee members at least 2 weeks to read the approved proposal. In other words, plan to be done with the proposal writeup 3-3.5 weeks prior to the planned proposal defense.
 
 Tips:
