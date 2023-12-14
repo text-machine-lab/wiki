@@ -17,11 +17,13 @@ GPU-enabled:
 | IP           | Domain            | GPUs                     | CUDA version |
 |--------------|-------------------|--------------------------|--------------|
 | 172.16.33.17 | inanna.cs.uml.edu | 2x RTX 3090              | 11.8         |
-| 172.16.33.13 | enki.cs.uml.edu   | 1x RTX 3090              | 12.1         |
-| 172.16.33.15 | shala.cs.uml.edu  | 2x RTX 3090              | 12.0         |
-| 172.16.33.14 | ishkur.cs.uml.edu | DOWN                     | N/A          |
-| 172.16.33.9  | marduk.cs.uml.edu | 2x Titan X               | 11.0         |
-| <ask Vlad>   | ml1 <ask Vlad>    | 7x A6000 Ada             | 12.2         |
+| 172.16.33.13 | enki.cs.uml.edu   | 2x Titan X               | 11.4         |
+| 172.16.33.15 | shala.cs.uml.edu  | 2x RTX 3090              | 11.0         |
+| 172.16.33.14 | ishkur.cs.uml.edu | 1x RTX 3090              | DEAD         |
+| 172.16.33.9  | marduk.cs.uml.edu | 2x GTX 1080, 1x Titan X  | 12.0         |
+| <ask Vlad>   | cs-gpu1.cs.uml.edu| 8x A6000 Ada             | 12.2         |
+  
+Ishkur needs a new motherboard.
 
 CPU-only:
 
@@ -63,7 +65,7 @@ HF_DATASETS_CACHE="/home/public/$(whoami)/datasets_cache"
 | SSD	            | Samsung 850 EVO 500GB |
 | HDD	            | WD Red Pro 3TB |
 | Power Supply   	| EVGA Supernova G2 1300W |
-| CPU Cooler	     | Cooler Master Hyper 212 EVO |
+| CPU Cooler	   | Cooler Master Hyper 212 EVO |
 | GPU      	      | EVGA GeForce GTX 1080 |
 
 ### Detailed Inanna spec
