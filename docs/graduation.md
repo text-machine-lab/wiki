@@ -1,6 +1,7 @@
 # PhD graduation
 
 Decided to graduate? Welcome to hell.
+> UPD from Vlad: I though Olga was exaggerating, but the process is really confusing and long. It will take you a **full semester** or more to do it.
 
 Congratulations on making it this far. However, you are not quite there yet - there is still an overwhelming amount of paperwork you will have to go through.
 To save yourself some time, please follow this step-by-step guideline on how to get graduation clearance.
@@ -95,23 +96,25 @@ Tips:
 
 Once your proposal is ready, you need to get it approved (yes, it does sound ridiculous). This means you need to send the proposal, the list of committee members with the intended proposal date, [the proposed committee form](http://www.cs.uml.edu/~gcoord/forms/Proposed_Committee_Form.docx), and the abstract of your proposal to your graduate coordinator (prof. Chen). **Do not** expect a fast or a detailed response. In fact, be thankful if you get any.
 
-❗Note that you can't schedule your proposal defense until your proposal is approved. Wait for the approval and send follow-up emails if necessary.
+Note that you can't schedule your proposal defense until your proposal is approved. Wait for the approval and send follow-up emails if necessary.
 
 ❗Advertise your proposal **at least 2 weeks prior to the defense date** by sending an email to cs-msgs@listserv.uml.edu and by filling out the [Today@UML form](https://www.uml.edu/service/Apps/WebsiteContentManagement/TodaySubmission/Submit).
 
-❗Make sure to schedule the defence date during the proposal
+## 5. Right after the proposal
 
-❗Make sure to sign the title page (PI + committee, no dean signature required for proposal). PDF annotation signature should be fine.
+I **heavily** recommend to do all of these the day you defend your proposal
 
-## 5. After the Proposal
+1. Make sure to schedule the defence date during the proposal
+2. Make sure to sign the title page (PI + committee, no dean signature required for proposal). PDF annotation signature should be fine.
+3. As soon as you schedule your defense, submit defense announcement to Today@UML and CS-MSGS. Use [this template](https://www.uml.edu/myuml/submissions/2023/2023-12-12-17-49-31-doctoral-proposal-defense-yidong-z.aspx).
 
 Submit your thesis draft to the library. **You have to do it a week before the library submission deadline.** It will cost $30+ to ProQuest and extra $50 to the library (archival fee). You don't have to register the copyright through ProQuest (extra $90).
 
 You don't have to use your university email with ProQuest and I actually had some issues with it for some reason. It's better to use your personal email, because this way you'll be able to access this after graduation. You probably don't need it, but I guess it's better to have it just in case.
 
-If you have any issues, subit 
-
 ## 6. Dissertation Defence
+
+❗You can't defend unless you advertized your thesis at least two weeks before the defence on Today@UML.
 
 ## 7. After defense
 
