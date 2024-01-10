@@ -8,7 +8,7 @@ To save yourself some time, please follow this step-by-step guideline on how to 
 
 ## Official checklist:
 
-Follow [this checklist](https://www.uml.edu/sciences/computer-science/programs/masters/doctorate/checklist.aspx) for a general step-by-step graduation guide. And you can find [this one](https://www.cs.uml.edu/~gcoord/student-documents.html#PhDPathway) to be useful too.
+Follow [this checklist](https://www.uml.edu/sciences/computer-science/programs/masters/doctorate/checklist.aspx) for a general step-by-step graduation guide. And you can find [this one](https://www.cs.uml.edu/~gcoord/student-documents.html#PhDPathway) to be useful too, and [this one](https://www.uml.edu/catalog/graduate/policies/dissertation-thesis/submission.aspx) as well (it has more details on requirements of the thesis defense)
 
 [Thesis guide](https://www.uml.edu/catalog/graduate/policies/dissertation-thesis/) is also very useful.
 
@@ -118,4 +118,10 @@ You don't have to use your university email with ProQuest and I actually had som
 
 ## 7. After defense
 
+Source: [this link](https://www.uml.edu/catalog/graduate/policies/dissertation-thesis/submission.aspx)
+
+1. Collect commetee signatures for the title page
+2. Submit it to the library
+3. Submit Completion of Ph.D. Thesis Defense form to your graduate coordinator
+4. Send your graduate coordinator email with two papers from the thesis that were published at approved conferences/journals
 
