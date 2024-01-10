@@ -1,7 +1,7 @@
 # PhD graduation
 
 Decided to graduate? Welcome to hell.
-> UPD from Vlad: I though Olga was exaggerating, but the process is really confusing and long. It will take you a **full semester** or more to do it.
+> UPD from Vlad: I throught Olga was exaggerating, but the process is really confusing and long. It will take you a **full semester** or more to do it.
 
 Congratulations on making it this far. However, you are not quite there yet - there is still an overwhelming amount of paperwork you will have to go through.
 To save yourself some time, please follow this step-by-step guideline on how to get graduation clearance.
