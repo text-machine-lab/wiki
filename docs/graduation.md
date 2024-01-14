@@ -118,10 +118,7 @@ You don't have to use your university email with ProQuest and I actually had som
 
 ## 7. After defense
 
-Source: [this link](https://www.uml.edu/catalog/graduate/policies/dissertation-thesis/submission.aspx)
-
 1. Collect commetee signatures for the title page
 2. Submit it to the library
-3. Submit Completion of Ph.D. Thesis Defense form to your graduate coordinator
-4. Send your graduate coordinator email with two papers from the thesis that were published at approved conferences/journals
+3. Submit [this form](https://www.cs.uml.edu/~gcoord/student-forms.html) to your graduate coordinator
 
